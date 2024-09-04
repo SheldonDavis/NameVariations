@@ -22,14 +22,20 @@ function App() {
     LastNames.forEach((lName) => {
       FirstNames.forEach((fName) => {
         tempArray.push(`${fName} ${lName}`);
-        tempArray.push(`${lName}, ${fName}`);
         tempArray.push(`${fName.charAt(0)} ${lName}`);
+        if (LastNameFirst) {
+          tempArray.push(`${lName}, ${fName}`);
+        }
 
         MiddleNames.forEach((mName) => {
           tempArray.push(`${fName} ${mName} ${lName}`);
           tempArray.push(`${fName} ${mName.charAt(0)} ${lName}`);
           tempArray.push(`${fName.charAt(0)} ${mName} ${lName}`);
           tempArray.push(`${fName.charAt(0)} ${mName.charAt(0)} ${lName}`);
+
+          if (LastNameFirst) {
+            tempArray.push(`${lName}, ${fName} ${mName}`);
+          }
         });
 
         SirNames.forEach((sName) => {
@@ -47,7 +53,9 @@ function App() {
 
       NickNames.forEach((nName) => {
         tempArray.push(`${nName} ${lName}`);
-        tempArray.push(`${lName}, ${nName}`);
+        if (LastNameFirst) {
+          tempArray.push(`${lName}, ${nName}`);
+        }
 
         MiddleNames.forEach((mName) => {
           tempArray.push(`${nName} ${mName} ${lName}`);
