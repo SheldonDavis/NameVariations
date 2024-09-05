@@ -25,7 +25,7 @@ function TextBoxList(props: Props) {
           </>
         )}
       </span>
-      <button onClick={appendBlankName}>Add Name</button>
+      <button onClick={appendBlankName}>Add a Name</button>
     </>
   );
 }
