@@ -18,7 +18,7 @@ function TextBox(props: Props) {
     setNames([...tempArray]);
   }
   return (
-    <>
+    <span className={`inputRow`}>
       <input
         type='text'
         defaultValue={name}
@@ -27,7 +27,7 @@ function TextBox(props: Props) {
         }}
       />
       <button onClick={removeRecord}>X</button>
-    </>
+    </span>
   );
 }
 export default TextBox;
