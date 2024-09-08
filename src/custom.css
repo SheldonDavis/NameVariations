@@ -23,10 +23,6 @@
     flex-wrap: wrap;
 }
 
-.flexRow.wrap span{ 
-    white-space:nowrap;
-}
-
 .tbWrapper input{
     font-size:1.13em;width:75%;margin-right:5%;
     margin-bottom:1em;
