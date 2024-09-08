@@ -33,7 +33,9 @@ function App() {
           return;
         }
         tempArray.push(`${fName} ${lName}`);
-        tempArray.push(`${fName.charAt(0)} ${lName}`);
+        if (!tempArray.includes(`${fName.charAt(0)} ${lName}`)) {
+          tempArray.push(`${fName.charAt(0)} ${lName}`);
+        }
         if (LastNameFirst) {
           tempArray.push(`${lName}, ${fName}`);
         }
@@ -43,9 +45,15 @@ function App() {
             return;
           }
           tempArray.push(`${fName} ${mName} ${lName}`);
-          tempArray.push(`${fName} ${mName.charAt(0)} ${lName}`);
-          tempArray.push(`${fName.charAt(0)} ${mName} ${lName}`);
-          tempArray.push(`${fName.charAt(0)} ${mName.charAt(0)} ${lName}`);
+          if (!tempArray.includes(`${fName} ${mName.charAt(0)} ${lName}`)) {
+            tempArray.push(`${fName} ${mName.charAt(0)} ${lName}`);
+          }
+          if (!tempArray.includes(`${fName.charAt(0)} ${mName} ${lName}`)) {
+            tempArray.push(`${fName.charAt(0)} ${mName} ${lName}`);
+          }
+          if (!tempArray.includes(`${fName.charAt(0)} ${mName.charAt(0)} ${lName}`)) {
+            tempArray.push(`${fName.charAt(0)} ${mName.charAt(0)} ${lName}`);
+          }
 
           if (LastNameFirst) {
             tempArray.push(`${lName}, ${fName} ${mName}`);
@@ -57,16 +65,24 @@ function App() {
             return;
           }
           tempArray.push(`${fName} ${lName} ${sName}`);
-          tempArray.push(`${fName.charAt(0)} ${lName} ${sName}`);
+          if (!tempArray.includes(`${fName.charAt(0)} ${lName} ${sName}`)) {
+            tempArray.push(`${fName.charAt(0)} ${lName} ${sName}`);
+          }
 
           MiddleNames.forEach((mName) => {
             if (!mName) {
               return;
             }
             tempArray.push(`${fName} ${mName} ${lName} ${sName}`);
-            tempArray.push(`${fName.charAt(0)} ${mName.charAt(0)} ${lName} ${sName}`);
-            tempArray.push(`${fName} ${mName.charAt(0)} ${lName} ${sName}`);
-            tempArray.push(`${fName.charAt(0)} ${mName} ${lName} ${sName}`);
+            if (!tempArray.includes(`${fName.charAt(0)} ${mName.charAt(0)} ${lName} ${sName}`)) {
+              tempArray.push(`${fName.charAt(0)} ${mName.charAt(0)} ${lName} ${sName}`);
+            }
+            if (!tempArray.includes(`${fName} ${mName.charAt(0)} ${lName} ${sName}`)) {
+              tempArray.push(`${fName} ${mName.charAt(0)} ${lName} ${sName}`);
+            }
+            if (!tempArray.includes(`${fName.charAt(0)} ${mName} ${lName} ${sName}`)) {
+              tempArray.push(`${fName.charAt(0)} ${mName} ${lName} ${sName}`);
+            }
           });
         });
       });
@@ -85,7 +101,9 @@ function App() {
             return;
           }
           tempArray.push(`${nName} ${mName} ${lName}`);
-          tempArray.push(`${nName} ${mName.charAt(0)} ${lName}`);
+          if (!tempArray.includes(`${nName} ${mName.charAt(0)} ${lName}`)) {
+            tempArray.push(`${nName} ${mName.charAt(0)} ${lName}`);
+          }
         });
 
         SirNames.forEach((sName) => {
@@ -99,7 +117,9 @@ function App() {
               return;
             }
             tempArray.push(`${nName} ${mName} ${lName} ${sName}`);
-            tempArray.push(`${nName} ${mName.charAt(0)} ${lName} ${sName}`);
+            if (!tempArray.includes(`${nName} ${mName.charAt(0)} ${lName} ${sName}`)) {
+              tempArray.push(`${nName} ${mName.charAt(0)} ${lName} ${sName}`);
+            }
           });
         });
       });
