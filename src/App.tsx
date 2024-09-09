@@ -170,14 +170,7 @@ function App() {
           Generate Name Variations
         </button>
       </div>
-      <div className={`flexRow centered wrap`}>
-        {Variations.length > 0 &&
-          Variations?.map((Name: string, i: number) => (
-            <>
-              <span key={i}>{Name};</span>
-            </>
-          ))}
-      </div>
+      <div className={`flexRow centered wrap`}>{Variations.length > 0 && Variations?.map((Name: string) => <>{Name};</>)}</div>
     </>
   );
 }
