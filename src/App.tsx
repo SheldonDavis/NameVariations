@@ -17,6 +17,10 @@ function App() {
 
   const [Variations, setVariations] = useState<Array<string>>([]);
 
+  function removeDuplicates(array: Array<string>) {
+    return array.filter((item, index) => array.indexOf(item) === index);
+  }
+
   function GenerateNameVariations() {
     const tempArray: Array<string> = [];
     let missingRequired: boolean = false;
@@ -129,7 +133,7 @@ function App() {
     // } else {
     // }
 
-    setVariations(tempArray);
+    setVariations(removeDuplicates(tempArray));
   }
 
   return (
